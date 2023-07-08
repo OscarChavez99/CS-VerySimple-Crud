@@ -200,7 +200,6 @@ namespace WindowsFormsApp1
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             LimpiarCampos();
-            MessageBox.Show("Limpio");
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {
