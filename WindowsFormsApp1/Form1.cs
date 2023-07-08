@@ -95,6 +95,7 @@ namespace WindowsFormsApp1
             txtPrecio.Text   = "";
             txtCantidad.Text = "";
             pbImage.Image = WindowsFormsApp1.Properties.Resources.agregar_imagen;
+            txtAgregarImagen.Text = "Agregar imagen:";
         }
 
         private void CargarDatosProducto()
@@ -136,6 +137,7 @@ namespace WindowsFormsApp1
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 pbImage.ImageLocation = openFileDialog.FileName;
+                txtAgregarImagen.Text = "Imagen:";
             }
         }
         //Clic en la tabla

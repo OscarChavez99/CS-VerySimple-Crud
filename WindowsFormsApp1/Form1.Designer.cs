@@ -40,7 +40,7 @@ namespace WindowsFormsApp1
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.txtCantidad = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.txtAgregarImagen = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
@@ -154,15 +154,15 @@ namespace WindowsFormsApp1
             this.txtCantidad.Size = new System.Drawing.Size(176, 22);
             this.txtCantidad.TabIndex = 8;
             // 
-            // label5
+            // txtAgregarImagen
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(406, 55);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 24);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Imagen:";
+            this.txtAgregarImagen.AutoSize = true;
+            this.txtAgregarImagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAgregarImagen.Location = new System.Drawing.Point(329, 55);
+            this.txtAgregarImagen.Name = "txtAgregarImagen";
+            this.txtAgregarImagen.Size = new System.Drawing.Size(151, 24);
+            this.txtAgregarImagen.TabIndex = 9;
+            this.txtAgregarImagen.Text = "Agregar imagen:";
             // 
             // label6
             // 
@@ -382,7 +382,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtAgregarImagen);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.txtNombre);
@@ -418,7 +418,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.TextBox txtCantidad;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label txtAgregarImagen;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.DataGridView dgvProductos;

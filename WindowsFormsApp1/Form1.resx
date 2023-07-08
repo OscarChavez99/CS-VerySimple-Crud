@@ -132,21 +132,6 @@
   <metadata name="Imagen.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Folio.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Nombre.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Precio.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Cantidad.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Imagen.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -174,7 +159,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANYAAADICAYAAACUPx/FAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAADltJREFUeF7tndtzFUUex/cv2fd9sfaBl619gLIst6gtFLbWKAoKC4gBXRBj1E0g
+        vQAADr0BR/uQrQAADltJREFUeF7tndtzFUUex/cv2fd9sfaBl619gLIst6gtFLbWKAoKC4gBXRBj1E0g
         3BYBlSVcDBcVCihwFYy4oi6CCIIxCwEBExGQrIJckhACSQgJhF6/UzPuOXM5SU5Pz3T3fD9Vvwc4nXP6
         /M58Znq6e7p/JQghsUOxCFEAxSJEARSLEAVQLEIUQLEIUQDFIkQBFIsQBVAsQhRAsQhRAMUiRAEUixAF
         UCxCFECxCFEAxSJEARSLEAVQLEIUQLEIUQDFIkQBFIsQBVAsoh39/XdFx/VO0d5x45fo6u5xXzUDikVS
@@ -241,7 +226,7 @@
   <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANIAAADfCAYAAACDB42cAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAADKBJREFUeF7t3duPVtUZx/H+Jb33xvTCG+MFxhgbY1LBVA0GIjQQRUGxKtIW4gFC
+        vgAADr4B6kKxwAAADKBJREFUeF7t3duPVtUZx/H+Jb33xvTCG+MFxhgbY1LBVA0GIjQQRUGxKtIW4gFC
         lKqpp1qxaKNYWsCCoILYoqByUA5KgYoghIMIOHIazjCz6m+ySff7vgs7h8XMep71/STrQmabzLxr/979
         7L2evfdPAoA+I0hAAgQJSIAgAQkQJCABggQkQJCABAgSkABBAhIgSEACBAlIgCABCRAkIAGCBCRAkIAE
         CBKQAEECEiBIQAIECUiAIAEJECQgAYIEJECQgAQIEpAAQQISIEhAAgQJSIAgAQkQJCABggQkQJCABAgS
@@ -301,7 +286,7 @@
   <data name="pictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAOYAAADjCAYAAACRp2gIAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAADeBJREFUeF7t3emzHFUdh3H/Et/7htIq31BahUVZWilF0VIRAQU1IiqCEAXZBQwY
+        vwAADr8BOAVTJAAADeBJREFUeF7t3emzHFUdh3H/Et/7htIq31BahUVZWilF0VIRAQU1IiqCEAXZBQwY
         QEzYQliFiEGWEHbDHgghJBAIkLAIKXaQkIWbgECSY32HHjK350x3T08vv3P6+VR1UeTOvdP33n5uT58+
         3fMZB8AcwgQMIkzAIMIEDCJMwCDCBAwiTMAgwgQMIkzAIMIEDCJMwCDCBAwiTMAgwgQMIkzAIMIEDCJM
         wCDCBAwiTMAgwgQMIkzAIMIEDCJMwCDCBAwiTMAgwgQMIkzAIMIEDCJMwCDCBAwiTMAgwgQMIkzAIMIE
@@ -366,7 +351,7 @@
   <data name="pictureBox5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAPoAAADhCAYAAADh/ahlAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAFLFJREFUeF7tndtzFUUex/cv2fd9sfZhX7b2AcvacsvaUsFSFAVEEV1Q5KbIGggg
+        wAAADsABataJCQAAFLFJREFUeF7tndtzFUUex/cv2fd9sfZhX7b2AcvacsvaUsFSFAVEEV1Q5KbIGggg
         chFESBQIgZWrEEAIsAhsXLkJxKDcIQvhVlzEAAlJSABFQ6/fYQ6eM6d75hzObbp/309VPxgGyTnTn+7f
         79c9Pb9ThBDnoeiECICiEyIAik6IACg6IQKg6IQIgKITIgCKTogAKDohAqDohAiAohMiAIpOiAAoOiEC
         oOiECICiEyIAik6IACg6IQKg6IQIgKITIgCKTogAKDohAqDohAiAohMiAIpOiAAoOiECoOiECICiEyIA
