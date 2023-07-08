@@ -6,3 +6,5 @@ A C# .NET Windows Forms project for a small shop
 - Create events through the buttons
 - Use MySQL Parameters
 - And more...
+
+![image](https://github.com/OscarChavez99/CS-VerySimple-Crud/assets/80979314/0f40adda-2f80-4889-9182-5f3455111863)
