@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    internal class Conexion
+    internal class Connection
     {
         protected string database = "productos";
-        protected string server   = "localhost";
-        protected string user     = "root";
-        protected string pass     = "";
+        protected string server = "localhost";
+        protected string user = "root";
+        protected string pass = "";
     }
 }

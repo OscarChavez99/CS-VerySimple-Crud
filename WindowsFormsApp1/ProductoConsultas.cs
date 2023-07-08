@@ -10,11 +10,11 @@ namespace WindowsFormsApp1
 {
     internal class ProductoConsultas
     {
-        private ConexionMysql conexionMysql;
+        private MysqlConnection conexionMysql;
         private List<Producto> mProductos;
         public ProductoConsultas()
         {
-            conexionMysql = new ConexionMysql();
+            conexionMysql = new MysqlConnection();
             mProductos = new List<Producto>();
         }
         public List<Producto> getProductos(string filtro)

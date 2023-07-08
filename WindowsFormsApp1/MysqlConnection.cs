@@ -10,14 +10,14 @@ namespace WindowsFormsApp1
 {
     //Heredar la clase "Conexion" para tener acceso a las variables de nuestra otra clase
     //(server, user, etc)
-    internal class ConexionMysql: Conexion
+    internal class MysqlConnection: Connection
     {
         //Clic derecho en el proecto/administradar paquetes nugget/examinar y escribir
         //mysql.data. Si no se soluciona dar clic en "MySqlConnection" y teclear al mismo
         //tiempo "alt + enter"
         private MySqlConnection connection;
         private string cadenaConexion;
-        public ConexionMysql()
+        public MysqlConnection()
         {
             cadenaConexion = "Database=" + database + "; "
             + "DataSource=" + server + "; "
