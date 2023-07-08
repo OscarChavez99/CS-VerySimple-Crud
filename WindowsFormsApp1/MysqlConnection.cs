@@ -16,15 +16,15 @@ namespace WindowsFormsApp1
         //mysql.data. Si no se soluciona dar clic en "MySqlConnection" y teclear al mismo
         //tiempo "alt + enter"
         private MySqlConnection connection;
-        private string cadenaConexion;
+        private string connectionString;
         public MysqlConnection()
         {
-            cadenaConexion = "Database=" + database + "; "
+            connectionString = "Database=" + database + "; "
             + "DataSource=" + server + "; "
             + "User Id=" + user + "; "
             + "Password=" + pass + "; ";
 
-            connection = new MySqlConnection(cadenaConexion);
+            connection = new MySqlConnection(connectionString);
         }
 
         public MySqlConnection GetConnection()

@@ -42,8 +42,8 @@ namespace WindowsFormsApp1
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.txtAgregarImagen = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtBusqueda = new System.Windows.Forms.TextBox();
-            this.dgvProductos = new System.Windows.Forms.DataGridView();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.Folio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,7 +60,7 @@ namespace WindowsFormsApp1
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -176,28 +176,28 @@ namespace WindowsFormsApp1
             this.label6.TabIndex = 10;
             this.label6.Text = "Búsqueda:";
             // 
-            // txtBusqueda
+            // txtSearch
             // 
-            this.txtBusqueda.Location = new System.Drawing.Point(149, 189);
-            this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(176, 20);
-            this.txtBusqueda.TabIndex = 11;
-            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
+            this.txtSearch.Location = new System.Drawing.Point(149, 189);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(176, 20);
+            this.txtSearch.TabIndex = 11;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
-            // dgvProductos
+            // dgvProducts
             // 
-            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Folio,
             this.Nombre,
             this.Precio,
             this.Cantidad,
             this.Imagen});
-            this.dgvProductos.Location = new System.Drawing.Point(37, 227);
-            this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.Size = new System.Drawing.Size(729, 250);
-            this.dgvProductos.TabIndex = 12;
-            this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
+            this.dgvProducts.Location = new System.Drawing.Point(37, 227);
+            this.dgvProducts.Name = "dgvProducts";
+            this.dgvProducts.Size = new System.Drawing.Size(729, 250);
+            this.dgvProducts.TabIndex = 12;
+            this.dgvProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
             // 
             // Folio
             // 
@@ -379,8 +379,8 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.pbImage);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.dgvProductos);
-            this.Controls.Add(this.txtBusqueda);
+            this.Controls.Add(this.dgvProducts);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtAgregarImagen);
             this.Controls.Add(this.txtCantidad);
@@ -395,7 +395,7 @@ namespace WindowsFormsApp1
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -420,8 +420,8 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label txtAgregarImagen;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtBusqueda;
-        private System.Windows.Forms.DataGridView dgvProductos;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.DataGridView dgvProducts;
         private System.Windows.Forms.DataGridViewTextBoxColumn Folio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;

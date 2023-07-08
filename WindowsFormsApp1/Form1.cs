@@ -14,43 +14,43 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        private List<Producto> mProductos;
-        private Producto mProducto;
-        private ProductoConsultas mProductoConsultas;
+        private List<Product> productsList;
+        private Product mProduct;
+        private ProductSql mProductSql;
         public Form1()
         {
             InitializeComponent();
-            mProductos = new List<Producto>();
-            mProductoConsultas = new ProductoConsultas();
-            mProducto = new Producto();
+            productsList = new List<Product>();
+            mProductSql  = new ProductSql();
+            mProduct     = new Product();
 
-            cargarProductos();
+            LoadProducts();
         }
 
-        private void cargarProductos(string filtro = "")
+        private void LoadProducts(string filter = "")
         {
-            dgvProductos.Rows.Clear();
-            dgvProductos.Refresh();
-            mProductos.Clear();
-            mProductos = mProductoConsultas.getProductos(filtro);
+            dgvProducts.Rows.Clear();
+            dgvProducts.Refresh();
+            productsList.Clear();
+            productsList = mProductSql.GetProducts(filter);
 
-            for (int i = 0; i < mProductos.Count(); i++)
+            for (int i = 0; i < productsList.Count(); i++)
             {
-                dgvProductos.RowTemplate.Height = 100;
-                dgvProductos.Rows.Add(
-                    mProductos[i].id,
-                    mProductos[i].nombre,
-                    mProductos[i].precio,
-                    mProductos[i].cantidad,
-                    Image.FromStream(new MemoryStream(mProductos[i].imagen))
+                dgvProducts.RowTemplate.Height = 100;
+                dgvProducts.Rows.Add(
+                    productsList[i].id,
+                    productsList[i].name,
+                    productsList[i].price,
+                    productsList[i].stock,
+                    Image.FromStream(new MemoryStream(productsList[i].image))
                     );
             }
         }
 
-        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+        private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             //cargarProductos(txtBusqueda.Text.Trim());
-            cargarProductos(txtBusqueda.Text);
+            LoadProducts(txtSearch.Text);
         }
         private bool DatosCorrectos()
         {
@@ -100,11 +100,11 @@ namespace WindowsFormsApp1
 
         private void CargarDatosProducto()
         {
-            mProducto.id       = GetFolioIfExist();
-            mProducto.nombre   = txtNombre.Text;
-            mProducto.precio   = float.Parse(txtPrecio.Text);
-            mProducto.cantidad = int.Parse(txtCantidad.Text);
-            mProducto.imagen   = ImageToByteArray(pbImage.Image); 
+            mProduct.id    = GetFolioIfExist();
+            mProduct.name  = txtNombre.Text;
+            mProduct.price = float.Parse(txtPrecio.Text);
+            mProduct.stock = int.Parse(txtCantidad.Text);
+            mProduct.image = ImageToByteArray(pbImage.Image); 
         }
 
         private int GetFolioIfExist()
@@ -143,14 +143,14 @@ namespace WindowsFormsApp1
         //Clic en la tabla
         private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = dgvProductos.Rows[e.RowIndex];
+            DataGridViewRow row = dgvProducts.Rows[e.RowIndex];
             txtFolio.Text = Convert.ToString(row.Cells[0].Value);
             txtNombre.Text = Convert.ToString(row.Cells["nombre"].Value);
             txtPrecio.Text = Convert.ToString(row.Cells[2].Value);
             txtCantidad.Text = Convert.ToString(row.Cells["cantidad"].Value);
 
             MemoryStream memoryStream = new MemoryStream();
-            Bitmap bitmap = (Bitmap)dgvProductos.CurrentRow.Cells[4].Value;
+            Bitmap bitmap = (Bitmap)dgvProducts.CurrentRow.Cells[4].Value;
             bitmap.Save(memoryStream, ImageFormat.Png);
             pbImage.Image = Image.FromStream(memoryStream);
         }
@@ -160,10 +160,10 @@ namespace WindowsFormsApp1
                 return;
 
             CargarDatosProducto();
-            if (mProductoConsultas.AgregarProducto(mProducto))
+            if (mProductSql.AddProduct(mProduct))
             {
                 MessageBox.Show("Producto agregado", "Éxito");
-                cargarProductos();
+                LoadProducts();
                 LimpiarCampos();
             }
         }
@@ -173,11 +173,11 @@ namespace WindowsFormsApp1
                 return;
 
             CargarDatosProducto();
-            if (mProductoConsultas.ModificarProducto(mProducto))
+            if (mProductSql.UpdateProduct(mProduct))
             {
                 //Actualizar dataGrid
                 MessageBox.Show("Producto modificado", "Éxito");
-                cargarProductos();
+                LoadProducts();
                 LimpiarCampos();
             }
         }
@@ -191,10 +191,10 @@ namespace WindowsFormsApp1
                 "Elimnar producto",MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 CargarDatosProducto();
-                if (mProductoConsultas.EliminarProducto(mProducto.id))
+                if (mProductSql.DeleteProduct(mProduct.id))
                 {
                     MessageBox.Show("Producto eliminado", "Éxito");
-                    cargarProductos();
+                    LoadProducts();
                     LimpiarCampos();
                 }
             }

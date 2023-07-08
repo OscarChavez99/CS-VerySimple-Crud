@@ -8,7 +8,7 @@ namespace WindowsFormsApp1
 {
     internal class Connection
     {
-        protected string database = "productos";
+        protected string database = "products";
         protected string server = "localhost";
         protected string user = "root";
         protected string pass = "";
