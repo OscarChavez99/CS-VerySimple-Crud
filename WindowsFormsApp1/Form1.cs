@@ -24,10 +24,10 @@ namespace WindowsFormsApp1
             mProductSql  = new ProductSql();
             mProduct     = new Product();
 
-            LoadProducts();
+            LoadDataGrid();
         }
 
-        private void LoadProducts(string filter = "")
+        private void LoadDataGrid(string filter = "")
         {
             dgvProducts.Rows.Clear();
             dgvProducts.Refresh();
@@ -50,68 +50,68 @@ namespace WindowsFormsApp1
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             //cargarProductos(txtBusqueda.Text.Trim());
-            LoadProducts(txtSearch.Text);
+            LoadDataGrid(txtSearch.Text);
         }
-        private bool DatosCorrectos()
+        private bool CorrectData()
         {
             //----Nombre----
-            if (txtNombre.Text == "")
+            if (txtName.Text == "")
             {
-                MessageBox.Show("Ingrese el nombre");
+                MessageBox.Show("Empty name", "Error");
                 return false;
             }
             //----Precio-----
-            if (txtPrecio.Text == "")
+            if (txtPrice.Text == "")
             {
-                MessageBox.Show("Ingrese el precio");
+                MessageBox.Show("Empty price", "Error");
                 return false;
             }
             //En caso de haber precio, validar si es númerico
-            if (!float.TryParse(txtPrecio.Text.Trim(), out float precio))
+            if (!float.TryParse(txtPrice.Text.Trim(), out float precio))
             {
-                MessageBox.Show("Ingrese un precio decimal");
+                MessageBox.Show("Price must be numeric/decimal value", "Error");
                 return false;
             }
             //----Cantidad-----
-            if (txtCantidad.Text == "")
+            if (txtStock.Text == "")
             {
-                MessageBox.Show("Ingrese la cantidad");
+                MessageBox.Show("Empty stock", "Error");
                 return false;
             }
             //En caso de haber precio, validar si es númerico
-            if (!int.TryParse(txtCantidad.Text.Trim(), out int cantidad))
+            if (!int.TryParse(txtStock.Text.Trim(), out int cantidad))
             {
-                MessageBox.Show("Ingrese cantidad númerica");
+                MessageBox.Show("Stock must be numeric value", "Error");
                 return false;
             }
             
             return true;
         }
 
-        private void LimpiarCampos()
+        private void ClearText()
         {
-            txtFolio.Text    = "";
-            txtNombre.Text   = "";
-            txtPrecio.Text   = "";
-            txtCantidad.Text = "";
+            txtID.Text    = "";
+            txtName.Text   = "";
+            txtPrice.Text   = "";
+            txtStock.Text = "";
             pbImage.Image = WindowsFormsApp1.Properties.Resources.agregar_imagen;
-            txtAgregarImagen.Text = "Agregar imagen:";
+            txtAgregarImagen.Text = "Add image:";
         }
 
-        private void CargarDatosProducto()
+        private void LoadProductObject()
         {
             mProduct.id    = GetFolioIfExist();
-            mProduct.name  = txtNombre.Text;
-            mProduct.price = float.Parse(txtPrecio.Text);
-            mProduct.stock = int.Parse(txtCantidad.Text);
+            mProduct.name  = txtName.Text;
+            mProduct.price = float.Parse(txtPrice.Text);
+            mProduct.stock = int.Parse(txtStock.Text);
             mProduct.image = ImageToByteArray(pbImage.Image); 
         }
 
         private int GetFolioIfExist()
         {
-            if (txtFolio.Text != "")
+            if (txtID.Text != "")
             {
-                if (int.TryParse(txtFolio.Text, out int folio))
+                if (int.TryParse(txtID.Text, out int folio))
                 {
                     return folio;
                 }
@@ -137,73 +137,73 @@ namespace WindowsFormsApp1
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 pbImage.ImageLocation = openFileDialog.FileName;
-                txtAgregarImagen.Text = "Imagen:";
+                txtAgregarImagen.Text = "Image:";
             }
         }
         //Clic en la tabla
-        private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvProducts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = dgvProducts.Rows[e.RowIndex];
-            txtFolio.Text = Convert.ToString(row.Cells[0].Value);
-            txtNombre.Text = Convert.ToString(row.Cells["nombre"].Value);
-            txtPrecio.Text = Convert.ToString(row.Cells[2].Value);
-            txtCantidad.Text = Convert.ToString(row.Cells["cantidad"].Value);
+            txtID.Text = Convert.ToString(row.Cells[0].Value);
+            txtName.Text = Convert.ToString(row.Cells["NameHeader"].Value);
+            txtPrice.Text = Convert.ToString(row.Cells[2].Value);
+            txtStock.Text = Convert.ToString(row.Cells["StockHeader"].Value);
 
             MemoryStream memoryStream = new MemoryStream();
             Bitmap bitmap = (Bitmap)dgvProducts.CurrentRow.Cells[4].Value;
             bitmap.Save(memoryStream, ImageFormat.Png);
             pbImage.Image = Image.FromStream(memoryStream);
         }
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (!DatosCorrectos())
+            if (!CorrectData())
                 return;
 
-            CargarDatosProducto();
+            LoadProductObject();
             if (mProductSql.AddProduct(mProduct))
             {
-                MessageBox.Show("Producto agregado", "Éxito");
-                LoadProducts();
-                LimpiarCampos();
+                MessageBox.Show("Product added!", "Success");
+                LoadDataGrid();
+                ClearText();
             }
         }
-        private void btnModificar_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (!DatosCorrectos())
+            if (!CorrectData())
                 return;
 
-            CargarDatosProducto();
+            LoadProductObject();
             if (mProductSql.UpdateProduct(mProduct))
             {
                 //Actualizar dataGrid
-                MessageBox.Show("Producto modificado", "Éxito");
-                LoadProducts();
-                LimpiarCampos();
+                MessageBox.Show("Product Updated", "Success");
+                LoadDataGrid();
+                ClearText();
             }
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             if (GetFolioIfExist() == -1)
-                MessageBox.Show("No ha seleccionado ningún producto para eliminar", "Error");
+                MessageBox.Show("No selected item to delete", "Error");
 
-            else if (MessageBox.Show("¿Seguro que deseas eliminar '"+txtNombre.Text+ "'?", 
-                "Elimnar producto",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            else if (MessageBox.Show("Are you sure you want to delete '" + txtName.Text+ "'?", 
+                "Delete product",MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                CargarDatosProducto();
+                LoadProductObject();
                 if (mProductSql.DeleteProduct(mProduct.id))
                 {
-                    MessageBox.Show("Producto eliminado", "Éxito");
-                    LoadProducts();
-                    LimpiarCampos();
+                    MessageBox.Show("Product deleted", "Success");
+                    LoadDataGrid();
+                    ClearText();
                 }
             }
         }
-        private void btnLimpiar_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
-            LimpiarCampos();
+            ClearText();
         }
-        private void btnSalir_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
