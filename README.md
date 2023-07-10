@@ -7,4 +7,4 @@ A C# .NET Windows Forms project for a small shop
 - Use MySQL Parameters
 - And more...
 
-![image](https://github.com/OscarChavez99/CS-VerySimple-Crud/assets/80979314/0f40adda-2f80-4889-9182-5f3455111863)
+![image](https://github.com/OscarChavez99/CS-VerySimple-Crud/assets/80979314/b54129f6-75d7-45a9-b5fc-1d47d53fd36f)
