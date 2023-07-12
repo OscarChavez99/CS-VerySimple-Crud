@@ -1,7 +1,7 @@
 # CS-VerySimple-Crud
 A C# .NET Windows Forms project for a small shop
 
-## This CRUD it's possible thanks to this YouTube list:
+## This CRUD was made possible thanks to:
 https://www.youtube.com/watch?v=CQrPqA3VL2c&list=PLbsNb1gaMPj6jrrAc6pHHTBYQGXYCkGIN
 
 ## This CRUD will help you understand:
